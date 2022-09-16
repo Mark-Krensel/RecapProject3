@@ -1,6 +1,15 @@
+import updatePageDisplay from '../nav-pagination/nav-pagination.js';
+import fetchCharacters from './index.js'; //<-- ggf. Pfad anpassen
+
 const nextButton = document.querySelector('[data-js="button-next"]');
-const previousbutton = document.querySelector('[data-js="button-prev"]');
+const previousButton = document.querySelector('[data-js="button-prev"]');
 
-nextButton.addEventListener('click', () => {});
+nextButton.addEventListener('click', () => {
+  updatePageDisplay('+');
+  fetchCharacters();
+});
 
-previousbutton.addEventListener('click', () => {});
+previousButton.addEventListener('click', () => {
+  updatePageDisplay('-');
+  fetchCharacters();
+});
